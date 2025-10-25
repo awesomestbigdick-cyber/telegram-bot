@@ -2,8 +2,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 import sqlite3, uuid, logging
 
-BOT_TOKEN = "8300296784:AAHleBkEoDBw3V6RAybLKvBUiXY3ktmcEao"
-CHANNEL_USERNAME = "@magia_vostoka"
+import os
+
+BOT_TOKEN = os.getenv("BOT_TOKEN") or "8300296784:AAHleBkEoDBw3V6RAybLKvBUiXY3ktmcEao"
+CHANNEL_USERNAME = os.getenv("CHANNEL_USERNAME") or "@magia_vostoka"
 
 logging.basicConfig(level=logging.INFO)
 
